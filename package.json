@@ -1,0 +1,19 @@
+{
+  "name": "contact",
+  "version": "1.0.0",
+  "description": "This is a simple contact list",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjun-computer-geek/contact.git"
+  },
+  "author": "Arjun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjun-computer-geek/contact/issues"
+  },
+  "homepage": "https://github.com/arjun-computer-geek/contact#readme"
+}
