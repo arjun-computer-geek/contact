@@ -4,7 +4,8 @@
   "description": "This is a simple contact list",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/arjun-computer-geek/contact/issues"
   },
-  "homepage": "https://github.com/arjun-computer-geek/contact#readme"
+  "homepage": "https://github.com/arjun-computer-geek/contact#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0"
+  }
 }
