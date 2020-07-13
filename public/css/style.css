@@ -1,0 +1,117 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serfif;
+}
+
+nav{
+    height: 10vh;
+    background-color: #5b78c7;
+}
+
+#logo{
+    height: 100%;
+    width: 16%;
+    float: left
+}
+
+#search-box{
+    float: left;
+    height: 100%;
+    width: 30%;
+}
+
+#search-box input{
+    width: 70%;
+    margin: 3%;
+    font-size: 18px;
+    padding: 2% ;
+    border: 1px solid #ddd;
+    display: flex;
+    float: left;
+}
+
+#nav-bar{
+    float: left;
+    height: 10vh;
+    width: 54%;
+}
+.nav-links{
+    display: flex ;
+    list-style: none;
+    padding: 3%;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: left;
+    margin-left: auto;  
+}
+
+.nav-links li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+
+
+@media screen and (max-width: 768px){
+    .nav-icon .line{
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 8px;
+    }
+
+    nav{
+        position: relative;
+    }
+
+    .nav-icon{
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+    }
+
+    .nav-links{
+        position: fixed;
+        background-color: #5b78c7;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -30%);
+        -webkit-clip-path: circle(100px at 90% -30%);
+        transition: all 1s ease-out;
+        pointer-events: none; 
+    }
+    
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -20%);
+        -webkit-clip-path: circle(1000spx at 90% -20%);
+        pointer-events: all;
+
+    }
+
+    #logo{
+        height: auto;
+        width: auto;
+        float: left;
+        position: inherit;
+    }
+    
+    #search-box{
+        padding: 1%;
+        float: left;
+        height: auto;
+        width: auto;
+    }
+} 
