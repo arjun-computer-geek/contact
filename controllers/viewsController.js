@@ -3,9 +3,3 @@ exports.getHome = (req, res) => {
         title: "Home"
     })
 }
-
-exports.getLogin = (req, res) => {
-    res.status(200).render( 'login', {
-        title: "login"
-    })
-}
