@@ -12,10 +12,5 @@ app.use(express.static(`${__dirname}/public`))
 
 //ROUTES
 app.use('/', viewRouter)
-app.get('/login', (req, res) => {
-    res.status(200).render('login', {
-        title: 'Login'
-    })
-})
 
 module.exports = app;
