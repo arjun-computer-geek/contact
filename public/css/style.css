@@ -8,6 +8,7 @@ body{
     font-family: sans-serfif;
 }
 
+/* HEADER CSS */
 nav{
     height: 10vh;
     background-color: #5b78c7;
@@ -58,9 +59,24 @@ nav{
 
 }
 
+.nav-links li a:hover{
+    color: rgb(239, 236, 241);
+}
 
+.login-signup-button{
+    padding: 3px 4px;
+    border-radius: 30px;
+}
+
+.login-signup-button:hover{
+    box-shadow: 2px 2px white;
+}
 
 @media screen and (max-width: 768px){
+    .login-signup-button:hover{
+        box-shadow: none;
+    }
+
     .nav-icon .line{
         width: 30px;
         height: 3px;
