@@ -5,11 +5,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         block links
             link(rel="stylesheet", href="./css/style.css")
+            link(rel="stylesheet", href="./css/sidebar.css")
+            link(rel="stylesheet", href="./css/login.css")
+
         title Contact | #{title}
     body
-        
-        
-
         //- HEADER
         include _header
         //- CONTENT
@@ -17,5 +17,6 @@ html(lang="en")
             h1 This is a base template
 
         //- FOOTER
-
-        script(src="./js/script.js")
+        block script
+            script(src="./js/script.js")
+            script(src="./js/sidebar.js")

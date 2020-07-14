@@ -1,26 +1,8 @@
-nav
-    .nav-icon
-        .line
-        .line
-        .line
-    .header
-
-        #logo
-            img(src="./img/contact-logo.png", alt="Contact Logo")
-        #search-box
-            input(type="text" id="mySearch" onkeyup="searchContact()" placeholder="Search Contacts..." title="Search Contacts")          
-    
-        #nav-bar
-            ul(class="nav-links")
-                li
-                    a(href="/") Contacts
-                li
-                    a(href="#") Create Label
-                li
-                    a(href="#") Settings
-                li
-                    a(href="#") Help & Feed Back
-                li
-                    a(class="login-signup-button" role="button" href="#" onclick="document.getElementById('id01').style.display='block'") Login
-                li
-                    a(class="login-signup-button" role="button" href="#") Sign Up
+include _sidebar
+.header
+    span(style="font-size:30px;cursor:pointer" onclick="openNav()" id="menu-icon") &#9776;
+    img(src="./img/contact-logo.png", alt="Contact Logo" id="contact-logo")
+    input(id="search-box" type="text"  onkeyup="searchContact()" placeholder="Search Contacts..." title="Search Contacts")          
+    a(href="#") Sign Up
+    a(href="#" onclick="document.getElementById('id01').style.display='block'") Login
+include _login
