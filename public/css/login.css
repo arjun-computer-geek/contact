@@ -61,17 +61,17 @@
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
-  }
+}
   
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
   
   /* Set a style for all buttons */
   #login-btn {
@@ -104,12 +104,12 @@ form {
   
   /* Avatar image */
   img.avatar {
-    width: 40%;
-    border-radius: 50%;
+    width: 50%;
+    border-radius: 60%;
   }
   
   /* Add padding to containers */
-  .container {
+  .login-container {
     padding: 16px;
   }
   
@@ -119,13 +119,3 @@ form {
     padding-top: 16px;
   }
   
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
-  }
