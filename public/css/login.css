@@ -85,15 +85,21 @@ input[type=text], input[type=password] {
   }
   
   /* Add a hover effect for buttons */
-  button:hover {
+  /* button:hover {
     opacity: 0.8;
-  }
+  } */
   
   /* Extra style for the cancel button (red) */
-  .cancelbtn {
+  #cancel-btn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
+  }
+
+  #cancel-btn:hover,
+  #login-btn:hover{
+    opacity: 0.8;
+    cursor: pointer;
   }
   
   /* Center the avatar image inside this container */
