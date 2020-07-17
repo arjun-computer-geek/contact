@@ -1,8 +1,10 @@
 include _sidebar
 .header
     span(style="font-size:30px;cursor:pointer" onclick="openNav()" id="menu-icon") &#9776;
-    img(src="./img/contact-logo.png", alt="Contact Logo" id="contact-logo")
+    
+    img(src="./img/contact-logo.png", alt="Contact Logo" id="contact-logo" href="/")
     input(id="search-box" type="text"  onkeyup="searchContact()" placeholder="Search Contacts..." title="Search Contacts")          
-    a(href="#") Sign Up
+    a(href="#" onclick="document.getElementById('id02').style.display='block'") Sign Up
     a(href="#" onclick="document.getElementById('id01').style.display='block'") Login
 include _login
+include signup
