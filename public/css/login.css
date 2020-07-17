@@ -64,13 +64,18 @@ form {
 }
   
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+input:focus {
+  background-color: rgb(241, 238, 238);
+  outline: none;
 }
   
 /* Set a style for all buttons */
@@ -85,13 +90,14 @@ input[type=text], input[type=password] {
 }
 
 /* Extra style for the cancel button (red) */
-#cancel-btn {
+.cancel-btn {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
   border: none;
   border-radius: 2px;
   color: white;
+  cursor: pointer;
 }
 
 /* Add a hover effect for buttons */

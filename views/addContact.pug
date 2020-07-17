@@ -1,27 +1,49 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Contact | #{title}
-    body
-        form(action="/addContact" method="post" calss="addContactForm")
-            button(type="submit") Cancel
-            span Add New Contact
-            button(type="submit") Save
-            input(type="file" name="photo" )
+extends home
+
+block links
+    link(rel="stylesheet", href="./css/style.css")
+    link(rel="stylesheet", href="./css/sidebar.css")
+    link(rel="stylesheet", href="./css/login.css")
+    link(rel="stylesheet", href="./css/home.css")
+    link(rel="stylesheet", href="./css/addContact.css")
+
+block content
+    form(action="/addContact" method="post" calss="addContactForm")
+        .addContact-container
+            div(id="addContact-heading-container")
+                a(class="cancel-btn" id="addContact-cance" href="/") Cancel
+                button(type="submit" id="addContact-save") Save
+                span(id="addContact-page-heading") Add New Contact
+            br
+            hr
+            input(type="file" name="photo" placeholder="Photo")
             input(type="text" placeholder="First Name" name="firstName")
             input(type="text" placeholder="Last Name" name="lasttName")
             input(type="text" placeholder="Workplace" name="workplace")
-            div(id="phone-container")
 
-            button(type="button" name="plus-btn" onclick="addContact(this)" ) + 
+            div(id="phone-container")
+            button(type="button" class="plus-btn" onclick="addContact()" ) + 
             span &nbsp; Contact
 
             div(id="email-container")
-
-            button(type="button" name="plus-btn" onclick="addEmail(this)" ) + 
+            button(type="button" class="plus-btn" onclick="addEmail()" ) + 
             span &nbsp; Email
-        
-        block script
-            script(src="./js/addContact.js")
+
+            div(id="date-container")
+            button(type="button" class="plus-btn" onclick="addDate()" ) + 
+            span &nbsp; Date
+
+            div(id="website-container")
+            button(type="button" class="plus-btn" onclick="addWebsite()" ) + 
+            span &nbsp; Website
+
+            div(id="address-container")
+
+            button(type="button" class="plus-btn" onclick="addAddress()" ) + 
+            span &nbsp; Address
+
+    block script
+        script(src="./js/script.js")
+        script(src="./js/sidebar.js")
+        script(src="./js/login.js")
+        script(src="./js/addContact.js")
