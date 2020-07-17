@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Contact | #{title}
+    body
+        form(action="/addContact" method="post" calss="addContactForm")
+            button(type="submit") Cancel
+            span Add New Contact
+            button(type="submit") Save
+            input(type="file" name="photo" )
+            input(type="text" placeholder="First Name" name="firstName")
+            input(type="text" placeholder="Last Name" name="lasttName")
+            input(type="text" placeholder="Workplace" name="workplace")
+            div(id="phone-container")
+
+            button(type="button" name="plus-btn" onclick="addContact(this)" ) + 
+            span &nbsp; Contact
+
+            div(id="email-container")
+
+            button(type="button" name="plus-btn" onclick="addEmail(this)" ) + 
+            span &nbsp; Email
+        
+        block script
+            script(src="./js/addContact.js")

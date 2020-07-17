@@ -73,55 +73,53 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
   
-  /* Set a style for all buttons */
-  #login-btn {
-    background-color: #5b78c7;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  /* Add a hover effect for buttons */
-  /* button:hover {
-    opacity: 0.8;
-  } */
-  
-  /* Extra style for the cancel button (red) */
-  #cancel-btn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
+/* Set a style for all buttons */
+#login-btn {
+  background-color: #5b78c7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
-  #cancel-btn:hover,
-  #login-btn:hover{
-    opacity: 0.8;
-    cursor: pointer;
-  }
-  
-  /* Center the avatar image inside this container */
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
-  
-  /* Avatar image */
-  img.avatar {
-    width: 50%;
-    border-radius: 60%;
-  }
-  
-  /* Add padding to containers */
-  .login-container {
-    padding: 16px;
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
+/* Extra style for the cancel button (red) */
+#cancel-btn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+/* Add a hover effect for buttons */
+#cancel-btn:hover,
+#login-btn:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 50%;
+  border-radius: 60%;
+}
+
+/* Add padding to containers */
+.login-container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
