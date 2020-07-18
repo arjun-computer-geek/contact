@@ -22,10 +22,11 @@ exports.getAllUsers =  async (req, res, next) => {
     next()
 }
 
-exports.createUser = async (req, res, next) =>{
+exports.createUser = async (req, res) =>{
+    console.log(req.body)
     try{
-        const newUser = await User.create(req.body)
 
+        const newUser = await User.create(req.body)
         res.status(201).json({
             status: 'success',
             data: {
@@ -34,13 +35,14 @@ exports.createUser = async (req, res, next) =>{
         })
 
     } catch(err){
+        console.log(err)
         res.status(400).json({
             status: 'error',
-            message: err
+            message: err.message
         })
 
     }
-    next();
+    
 }
 
 exports.updateUser = (req, res) => {

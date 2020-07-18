@@ -10,6 +10,7 @@ app.set('views', 'views')
 
 //Serving the static files
 app.use(express.static(`${__dirname}/public`))
+app.use(express.json())
 
 //ROUTES
 app.use('/', viewRouter)
