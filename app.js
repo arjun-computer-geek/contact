@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const viewRouter = require('./routes/viewRouter')
 const userRouter = require('./routes/userRouter')
@@ -10,7 +11,8 @@ app.set('views', 'views')
 
 //Serving the static files
 app.use(express.static(`${__dirname}/public`))
-app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //ROUTES
 app.use('/', viewRouter)
