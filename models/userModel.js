@@ -35,8 +35,11 @@ const userSchema = new mongoose.Schema({
             }
         },
         message: 'Password are not same'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
-
 })
 
 const User = mongoose.model('User', userSchema);

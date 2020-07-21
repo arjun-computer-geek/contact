@@ -1,7 +1,8 @@
 const User = require('./../models/userModel');
+const catchAsync = require('./../utils/catchAsync')
 
-exports.getAllUsers =  async (req, res, next) => {
-    try{
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+    
         const users = await User.find();
         
         // SEND RESPONCE
@@ -12,38 +13,19 @@ exports.getAllUsers =  async (req, res, next) => {
                 users
             }
         })
-    } catch(err){
-        console.log(err)
-        res.status(400).json({
-            status: 'error',
-            message: err
-        })
-    }
-    next()
-}
-
-exports.createUser = async (req, res) =>{
-    console.log(req.body)
-    try{
-
-        const newUser = await User.create(req.body)
-        res.status(201).json({
-            status: 'success',
-            data: {
-                user: newUser
-            }
-        })
-
-    } catch(err){
-        console.log(err)
-        res.status(400).json({
-            status: 'error',
-            message: err.message
-        })
-
-    }
     
-}
+})
+
+exports.createUser = catchAsync (  async (req, res) =>{
+
+    const newUser = await User.create(req.body)
+    res.status(201).json({
+        status: 'success',
+        data: {
+            user: newUser
+        }
+    })
+})
 
 exports.updateUser = (req, res) => {
     
