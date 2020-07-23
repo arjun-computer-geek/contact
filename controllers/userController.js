@@ -3,7 +3,7 @@ const catchAsync = require('./../utils/catchAsync')
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
     
-        const users = await User.find();
+        const users = await User.find()
         
         // SEND RESPONCE
         res.status(200).json({
@@ -16,18 +16,26 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     
 })
 
-exports.createUser = catchAsync (  async (req, res) =>{
+// exports.createUser = catchAsync (  async (req, res) =>{
 
-    const newUser = await User.create(req.body)
-    res.status(201).json({
-        status: 'success',
-        data: {
-            user: newUser
-        }
-    })
-})
+//     const newUser = await User.create(req.body)
+//     res.status(201).json({
+//         status: 'success',
+//         data: {
+//             user: newUser
+//         }
+//     })
+// })
 
 exports.updateUser = (req, res) => {
+    
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined...'
+    })
+}
+
+exports.getUser = (req, res) => {
     
     res.status(500).json({
         status: 'error',
