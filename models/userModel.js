@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+const crypto = require('crypto')
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -23,31 +24,31 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Please Enter a password'],
-        minlength: 8,
+        minlength: [8, 'Password should minimum length 8'],
         select: false
     },
     confirmPassword: {
         type: String,
         required: [true, 'Please Confirm Your Password'],
-        minlength: 8,
+        minlength: [8, 'Password should minimum length 8'],
         validate: {
             validator: function(el) {
-                return el === this.password;
+                return el === this.password
             }
         },
         message: 'Password are not same'
     },
     mobile: {
         type: String,
-        required: true,
-        minlength: [10, 'Mobile Number can not be less than 10'],
         maxlength: [10, 'Mobile Number can not be greater than 10']
     },
     createdAt: {
         type: Date,
         default: Date.now()
     },
-    passwordChangedAt: Date
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date
 })
 
 userSchema.pre('save', async function(next) {
@@ -56,6 +57,13 @@ userSchema.pre('save', async function(next) {
     //HASHING THE PASSWORD
     this.password = await bcrypt.hash(this.password, 12)
     this.confirmPassword = undefined
+    next()
+})
+
+userSchema.pre('save', function(next) {
+    if(!this.isModified('password' || this.isNew)) return next()
+
+    this.passwordChangedAt = Date.now() - 1000 // substracting 1s beacuse token always create after this time stamp
     next()
 })
 
@@ -71,11 +79,24 @@ userSchema.methods.changedPasswordAfter = function(JWTTimeStamp) {
             10
         )
 
-        return JWTTimeStamp < changedTimestamp;
+        return JWTTimeStamp < changedTimestamp
     }
     return false
 }
 
+userSchema.methods.createPasswordResetToken = function(){
+    const resetToken = crypto.randomBytes(32).toString('hex')
+
+    this.passwordResetToken = crypto
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex')
+
+    console.log({resetToken}, this.passwordResetToken)
+
+    this.passwordResetExpires = Date.now() + 10 * 60 * 1000
+    return resetToken
+}
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
