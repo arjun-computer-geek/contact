@@ -1,6 +1,7 @@
 extends base
 
 block links
+    //- link(href="/favicon.ico" type="image/x-icon" rel="icon")
     link(rel="stylesheet", href="./css/style.css")
     link(rel="stylesheet", href="./css/sidebar.css")
     link(rel="stylesheet", href="./css/login.css")
@@ -13,9 +14,9 @@ block content
         a(id="addContact" type="button" href="/addContact") +
 
 block script
+    //- script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
     script(src="./js/script.js")
     script(src="./js/sidebar.js")
     script(src="./js/login.js")
     script(src="./js/signup.js")
-    script(src="./js/addContact.js")
     

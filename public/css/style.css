@@ -58,7 +58,7 @@ body{
     box-shadow: 2px 2px white;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 450px){
     #menu-icon{
         margin: 5px 3px;
     }

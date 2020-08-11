@@ -9,11 +9,14 @@
     background-color: #5b78c7;
     border: none;
     color: white;
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 25px;
     margin: 4px 2px;
     border-radius: 50%;
     position: absolute;

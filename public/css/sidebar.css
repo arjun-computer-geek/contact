@@ -22,7 +22,7 @@
 .overlay a {
     padding: 8px;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 30px;
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -31,6 +31,11 @@
 .overlay a:hover, .overlay a:focus{
     color: #f1f1f1;
     cursor: pointer;
+   
+}
+.menu-item:hover{
+    font-size: 2.1rem;
+    transition:0.3sec;
 }
 
 .overlay .closebtn {
@@ -39,12 +44,17 @@
     right: 45px;
     font-size: 60px;
 }
+.closebtn:hover{
+    font-size: 60px;
+    
+}
 
 @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
+    .overlay a {font-size: 10px}
     .overlay .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
+    width:fit-content;
     }
 }

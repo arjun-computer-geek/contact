@@ -5,6 +5,7 @@ div(class="modal" id="id02")
             h2 Sign Up
             br
             hr
+            
 
             lebel(for="firstName") First Name :
             input(type="text" name="firstName" placeholder="First Name" required )
@@ -23,14 +24,14 @@ div(class="modal" id="id02")
 
             lebel(for="mobile") Mobile No. :
             input(type="text" name="mobile" placeholder="Mobile" required )
-            
-            label
-                input(type="checkbox" checked="checked" name="remember" style="margin-bottom:15px")
-                span(class="remember-me") &nbsp; Remember me
+            div(class="checkboxContain")
+                label(for="remember")
+                    input(type="checkbox" name="remember" style="margin-bottom:15px")
+                    span(class="remember-me") &nbsp; Remember me
 
             p By creating an account you agree to our 
                 a(href="#" style="color:dodgerblue") Terms & Privacy
             
-            div(class="clearfix")
-                button(type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn") Cancel
+            div(class="clearfix btn")
+                button(type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn btn") Cancel
                 button(type="submit" class="signup") Sign Up
